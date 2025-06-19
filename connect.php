@@ -1,0 +1,1 @@
+<?php$con = new mysqli('localhost','anshpltv_exam_user','mYuqZeu2=]nn','anshpltv_exam_db');if(!$con){    die(mysqli_error($con));}// $con->query("SET time_zone = 'Asia/Kolkata'");define('SITTE_URL','https://exam.kushitworld.com/');date_default_timezone_set("Asia/Kolkata");// echo date('d-m-Y H:i:s');// phpinfo();?>

@@ -1,0 +1,32 @@
+# lsapi_phpini /home/avtadznt/public_html/php.ini
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+#   RewriteRule ^(.*)$ user.php [L]
+#   RewriteRule ^(//user.php)$  * [L]
+  IndexIgnore *
+
+  Require all granted
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  RewriteCond %{REQUEST_FILENAME}.php -f
+
+  RewriteRule ^(.*)$ $1.php [L]
+</IfModule>
+
+<Files .htaccess>
+  Require all denied
+</Files>
+
+<Files config.php>
+  Require all denied
+</Files>
+
+Options -Indexes
+
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+AddType application/javascript .js
